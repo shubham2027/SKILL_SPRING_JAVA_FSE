@@ -1,22 +1,33 @@
 # Exercise 2: E-commerce Platform Search Function
 
-### Big O notation?
-It describes how fast an algo runs as the input size grows.
-- it helps us compare algo and choose the efficient one.
+This exercise demonstrates two ways to search a product list:
 
-Notation	Name	Example
-O(1)	Constant time	Accessing array index
-O(log n)	Logarithmic	Binary search
-O(n)	Linear	Linear search
-O(n²)	Quadratic	Bubble sort
+- `linearSearch` checks each product one by one.
+- `binarySearch` looks up a product name faster, but only works correctly when the array is sorted by `productName`.
 
-### Algorithm analysis
-Linear search in best case find in O(1), while avg and worst case in O(n).
+### Time complexity
 
-while, Binary search in best case gives O(1), and O(log n) in avg and worst case.
+- Linear search: best case `O(1)`, average and worst case `O(n)`.
+- Binary search: best case `O(1)`, average and worst case `O(log n)`.
 
+### How to run
 
-~ we will use binary search with a sorted product list for fast search.
+From `DataStructureAlgorithm/exercise2`, run:
+
+```powershell
+java .\ECommerceSearch.java
+```
+
+If you want to compile first, use:
+
+```powershell
+javac ECommerceSearch.java
+java ECommerceSearch
+```
+
+### Note
+
+The sample product list is already sorted by `productName`, which is required for binary search.
 
 
 # Exercise 7: Financial Forecasting
