@@ -38,8 +38,3 @@ Use common assertions like `assertEquals`, `assertTrue`, `assertFalse`, `assertN
 - `src/test/java/com/tdd/CalculatorTest.java`
 - `src/test/java/com/tdd/AssertionsExampleTest.java`
 
-## Notes
-
-- Keep the code small.
-- Use easy values.
-- Focus on understanding the test flow, not on complex logic.
