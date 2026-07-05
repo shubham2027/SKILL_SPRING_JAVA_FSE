@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Week 1/LoggingUsingSLF4J/pom.xml" />
+        <option value="$PROJECT_DIR$/Week 1/TDDUsingJunitExercises/Junit_testing/pom.xml" />
+        <option value="$PROJECT_DIR$/Week 1/TDDUsingJunitExercises/mockito_JUnit5_testing/pom.xml" />
+        <option value="$PROJECT_DIR$/Week 2/SpringCore_Maven/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="26" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
