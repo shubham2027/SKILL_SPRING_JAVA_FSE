@@ -28,6 +28,15 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
 - Created CSS Module [CohortDetails.module.css](myfirstreact/src/components/CohortDetails.module.css) with `.box` styling and `dt` tag selector.
 - Created component [CohortDetails.js](myfirstreact/src/components/CohortDetails.js) with dynamic `<h3>` font colors (`green` for `"Ongoing"` cohorts, `blue` for others).
 
+### 6. Trainers App (`TrainersApp` - React Router SPA)
+- Created model class [trainer.js](myfirstreact/src/trainer.js) with `TrainerId`, `Name`, `Email`, `Phone`, `Technology`, and `Skills`.
+- Created mock dataset [TrainersMock.js](myfirstreact/src/TrainersMock.js).
+- Components: [Trainerlist.js](myfirstreact/src/components/Trainerlist.js) and [TrainerDetails.js](myfirstreact/src/components/TrainerDetails.js) using `useParams()` hook and React Router DOM.
+
+### 7. Online Shopping App (`shoppingapp` - Class Components & Props)
+- Created class component [Cart.js](myfirstreact/src/components/Cart.js) with `itemname` and `price` properties.
+- Created class component [OnlineShopping.js](myfirstreact/src/components/OnlineShopping.js) containing an array of 5 cart items, mapping and rendering them as table rows.
+
 ---
 
 ## Main Entry Point
