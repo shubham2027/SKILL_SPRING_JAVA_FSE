@@ -37,17 +37,35 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
 - Created class component [Cart.js](myfirstreact/src/components/Cart.js) with `itemname` and `price` properties.
 - Created class component [OnlineShopping.js](myfirstreact/src/components/OnlineShopping.js) containing an array of 5 cart items, mapping and rendering them as table rows.
 
+### 8. People Counter App (`counterapp` - Class Component & State)
+- Created a separate React project [counterapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/counterapp).
+- Component: [CountPeople.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/counterapp/src/components/CountPeople.js)
+- Features:
+  - Tracks `entrycount` and `exitcount` using component constructor and state.
+  - Implements `UpdateEntry()` to increment entry count when the **Login** button is clicked.
+  - Implements `UpdateExit()` to increment exit count when the **Exit** button is clicked.
+  - Styled with a premium glassmorphic dark interface including crowd indicators and a capacity progress bar.
+
 ---
 
-## Main Entry Point
+## Main Entry Points
 
-All exercise components are preserved and imported in [App.js](myfirstreact/src/App.js).
+- All `myfirstreact` exercise components are preserved and imported in [App.js](myfirstreact/src/App.js).
+- The `counterapp` exercise renders [CountPeople.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/counterapp/src/components/CountPeople.js) directly inside its main entry point [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/counterapp/src/App.js).
 
 ## How to Run
 
+### Run `myfirstreact` Application:
 From the `Week 5/myfirstreact` folder:
-
 ```bash
 npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+
+### Run `counterapp` Application:
+From the `Week 5/counterapp` folder:
+```bash
+npm start
+```
+Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+
