@@ -46,12 +46,31 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
   - Implements `UpdateExit()` to increment exit count when the **Exit** button is clicked.
   - Styled with a premium glassmorphic dark interface including crowd indicators and a capacity progress bar.
 
+### 9. Cricket App (`cricketapp` - Map, Filter, Destructuring, Spread Merge)
+- Created a separate React project [cricketapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp).
+- Components:
+  - [ListofPlayers.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/components/ListofPlayers.js): Displays players using `map` and filters players with scores below 70 using ES6 arrow functions.
+  - [IndianPlayers.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/components/IndianPlayers.js): Splits players into Odd and Even teams using array destructuring, and merges T20/Ranji teams using the spread operator.
+- Conditional rendering:
+  - Switches between components on the home page [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/App.js) based on a `flag` variable inside an `if-else` statement.
+
+### 10. Office Space Rental App (`officespacerentalapp` - JSX & Attributes)
+- Created a separate React project [officespacerentalapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/officespacerentalapp).
+- Features:
+  - Header element rendering dynamic JSX string variables.
+  - Image element displaying the office space lobby image dynamically from attributes.
+  - Single object `ItemName` details displaying office Name, Rent, and Address.
+  - List of objects mapping and looping to display more office options.
+  - Conditional CSS styling applied to render the Rent in red if `<=` 60000, and green if `>` 60000.
+
 ---
 
 ## Main Entry Points
 
 - All `myfirstreact` exercise components are preserved and imported in [App.js](myfirstreact/src/App.js).
 - The `counterapp` exercise renders [CountPeople.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/counterapp/src/components/CountPeople.js) directly inside its main entry point [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/counterapp/src/App.js).
+- The `cricketapp` exercise renders [ListofPlayers.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/components/ListofPlayers.js) or [IndianPlayers.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/components/IndianPlayers.js) conditionally based on a flag inside [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/App.js).
+- The `officespacerentalapp` exercise renders office info and loops over more office space items inside its entry point [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/officespacerentalapp/src/App.js).
 
 ## How to Run
 
@@ -68,4 +87,19 @@ From the `Week 5/counterapp` folder:
 npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+
+### Run `cricketapp` Application:
+From the `Week 5/cricketapp` folder:
+```bash
+npm start
+```
+Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+
+### Run `officespacerentalapp` Application:
+From the `Week 5/officespacerentalapp` folder:
+```bash
+npm start
+```
+Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
+
 
