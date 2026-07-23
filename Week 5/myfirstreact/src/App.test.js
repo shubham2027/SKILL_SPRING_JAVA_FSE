@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders items information header', () => {
+test('renders github repositories header', () => {
   render(<App />);
-  const headerElement = screen.getByText(/Items Information/i);
+  const headerElement = screen.getByText(/GitHub Repositories for techiesyed/i);
   expect(headerElement).toBeInTheDocument();
 });
