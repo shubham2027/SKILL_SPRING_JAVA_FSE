@@ -1,0 +1,8 @@
+/* Minimal app styles */
+button {
+  padding: 5px 15px;
+  cursor: pointer;
+}
+select, input {
+  padding: 4px;
+}
