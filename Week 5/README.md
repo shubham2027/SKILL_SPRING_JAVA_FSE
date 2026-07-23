@@ -90,6 +90,15 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
     2. **Logical AND (&&)** using checkboxes to toggle columns individually.
     3. **Ternary Operator** using a show/hide toggle button.
 
+### 14. Employee Management App (`employeemanagementapp` - Context API)
+- Created a separate React project [employeemanagementapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp).
+- Features:
+  - Theme state (`'light'` / `'dark'`) sharing using React Context API.
+  - Custom context defined in [ThemeContext.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/ThemeContext.js).
+  - Context Provider wrapping the entire App JSX inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/App.jsx).
+  - Intermediate component [EmployeesList.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/components/EmployeesList.jsx) does not receive or pass the theme prop down, avoiding prop drilling.
+  - Nested child component [EmployeeCard.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/components/EmployeeCard.jsx) consumes the value of the context using `useContext(ThemeContext)` to dynamically style button class names.
+
 ---
 
 ## Main Entry Points
@@ -101,6 +110,7 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
 - The `eventexamplesapp` exercise renders the button triggers, counter state, and `<CurrencyConvertor />` inside its main entry [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/eventexamplesapp/src/App.jsx).
 - The `ticketbookingapp` exercise renders the Login/Logout actions, `<Greeting />` state, and user-specific view content in [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/ticketbookingapp/src/App.jsx).
 - The `bloggerapp` exercise renders the components dynamically inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/bloggerapp/src/App.jsx).
+- The `employeemanagementapp` exercise sets up the `<ThemeContext.Provider />` and renders the list in [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/App.jsx).
 
 ## How to Run
 
@@ -148,6 +158,13 @@ Open [http://localhost:5173](http://localhost:5173) (or the port specified in te
 
 ### Run `bloggerapp` Application:
 From the `Week 5/bloggerapp` folder:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) (or the port specified in terminal) to view the application in the browser.
+
+### Run `employeemanagementapp` Application:
+From the `Week 5/employeemanagementapp` folder:
 ```bash
 npm run dev
 ```

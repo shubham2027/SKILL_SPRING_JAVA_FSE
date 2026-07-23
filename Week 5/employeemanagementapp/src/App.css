@@ -1,0 +1,33 @@
+/* Theme button classes */
+.btn-light {
+  background-color: #f0f0f0;
+  color: #333333;
+  border: 1px solid #cccccc;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btn-light:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-dark {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #111111;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btn-dark:hover {
+  background-color: #222222;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
