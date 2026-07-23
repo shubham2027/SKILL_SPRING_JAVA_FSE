@@ -99,6 +99,14 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
   - Intermediate component [EmployeesList.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/components/EmployeesList.jsx) does not receive or pass the theme prop down, avoiding prop drilling.
   - Nested child component [EmployeeCard.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/components/EmployeeCard.jsx) consumes the value of the context using `useContext(ThemeContext)` to dynamically style button class names.
 
+### 15. Ticket Raising App (`ticketraisingapp` - Class Component State & Events)
+- Created a separate React project [ticketraisingapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/ticketraisingapp).
+- Features:
+  - Form raise-complaint component [ComplaintRegister.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/ticketraisingapp/src/components/ComplaintRegister.jsx) built as a React Class Component.
+  - Implements dynamic field binding via constructor-bound method `handleChange`.
+  - Implements form submit prevention and alert generating logic via `handleSubmit`.
+  - Generates a random Transaction ID (`NumberHolder`) on loading and displays a clean popup on submission.
+
 ---
 
 ## Main Entry Points
@@ -111,6 +119,7 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
 - The `ticketbookingapp` exercise renders the Login/Logout actions, `<Greeting />` state, and user-specific view content in [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/ticketbookingapp/src/App.jsx).
 - The `bloggerapp` exercise renders the components dynamically inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/bloggerapp/src/App.jsx).
 - The `employeemanagementapp` exercise sets up the `<ThemeContext.Provider />` and renders the list in [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/App.jsx).
+- The `ticketraisingapp` exercise renders the `<ComplaintRegister />` class component inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/ticketraisingapp/src/App.jsx).
 
 ## How to Run
 
@@ -165,6 +174,13 @@ Open [http://localhost:5173](http://localhost:5173) (or the port specified in te
 
 ### Run `employeemanagementapp` Application:
 From the `Week 5/employeemanagementapp` folder:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) (or the port specified in terminal) to view the application in the browser.
+
+### Run `ticketraisingapp` Application:
+From the `Week 5/ticketraisingapp` folder:
 ```bash
 npm run dev
 ```
