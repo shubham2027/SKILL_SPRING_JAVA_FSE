@@ -1,0 +1,44 @@
+.details-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+.details-column {
+  flex: 1;
+  padding: 0 40px;
+  text-align: center;
+}
+
+/* Green borders between columns as shown in the screenshot */
+.details-column:not(:last-child) {
+  border-right: 5px solid green;
+}
+
+.details-column h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.details-column h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000000;
+  margin: 15px 0 5px 0;
+}
+
+.details-column h4 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #111111;
+  margin: 5px 0;
+}
+
+.details-column p {
+  font-size: 1.1rem;
+  color: #333333;
+  margin-top: 5px;
+}

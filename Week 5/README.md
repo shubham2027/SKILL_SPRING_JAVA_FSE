@@ -80,6 +80,16 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
   - Displays Flight Details to all users, but displays a Ticket Booking Form only to logged-in users.
   - Employs simple unstyled HTML elements as requested to focus solely on functional requirements.
 
+### 13. Blogger App (`bloggerapp` - Multi-style Conditional Rendering)
+- Created a separate React project [bloggerapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/bloggerapp).
+- Features:
+  - 3 primary details sections: `Course Details`, `Book Details`, and `Blog Details` separated by solid green vertical borders as shown in the screenshot.
+  - Variable-based rendering (Element Variables) inside components using variables like `const bookdet = (...)`.
+  - Multiple demonstration styles of conditional rendering:
+    1. **If-Else / Dropdown Selector** to toggle specific views.
+    2. **Logical AND (&&)** using checkboxes to toggle columns individually.
+    3. **Ternary Operator** using a show/hide toggle button.
+
 ---
 
 ## Main Entry Points
@@ -90,6 +100,7 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
 - The `officespacerentalapp` exercise renders office info and loops over more office space items inside its entry point [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/officespacerentalapp/src/App.js).
 - The `eventexamplesapp` exercise renders the button triggers, counter state, and `<CurrencyConvertor />` inside its main entry [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/eventexamplesapp/src/App.jsx).
 - The `ticketbookingapp` exercise renders the Login/Logout actions, `<Greeting />` state, and user-specific view content in [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/ticketbookingapp/src/App.jsx).
+- The `bloggerapp` exercise renders the components dynamically inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/bloggerapp/src/App.jsx).
 
 ## How to Run
 
@@ -130,6 +141,13 @@ Open [http://localhost:5173](http://localhost:5173) (or the port specified in te
 
 ### Run `ticketbookingapp` Application:
 From the `Week 5/ticketbookingapp` folder:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) (or the port specified in terminal) to view the application in the browser.
+
+### Run `bloggerapp` Application:
+From the `Week 5/bloggerapp` folder:
 ```bash
 npm run dev
 ```
