@@ -63,6 +63,15 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
   - List of objects mapping and looping to display more office options.
   - Conditional CSS styling applied to render the Rent in red if `<=` 60000, and green if `>` 60000.
 
+### 11. Event Handling & Currency Converter App (`eventexamplesapp`)
+- Created a separate React project [eventexamplesapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/eventexamplesapp).
+- Features:
+  - React State and Custom Handler methods mapping multiple functions to a single event (e.g. Increment button triggers both state increment and alert greeting message).
+  - Synthetic event handling via standard onClick event (OnPress handler alerting "I was clicked").
+  - Passing arguments to event handlers (Say Welcome button passing "welcome" parameter).
+  - Component [CurrencyConvertor.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/eventexamplesapp/src/components/CurrencyConvertor.jsx) utilizing state variables for Amount and Currency, invoking `handleSubmit` to convert Euros to Rupees at a rate of 80, preventing browser reload.
+  - Beautiful glassmorphic UI card designs with modern typography, layout, hover scaling, and active animations.
+
 ---
 
 ## Main Entry Points
@@ -71,6 +80,7 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
 - The `counterapp` exercise renders [CountPeople.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/counterapp/src/components/CountPeople.js) directly inside its main entry point [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/counterapp/src/App.js).
 - The `cricketapp` exercise renders [ListofPlayers.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/components/ListofPlayers.js) or [IndianPlayers.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/components/IndianPlayers.js) conditionally based on a flag inside [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/cricketapp/src/App.js).
 - The `officespacerentalapp` exercise renders office info and loops over more office space items inside its entry point [App.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/officespacerentalapp/src/App.js).
+- The `eventexamplesapp` exercise renders the button triggers, counter state, and `<CurrencyConvertor />` inside its main entry [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/eventexamplesapp/src/App.jsx).
 
 ## How to Run
 
@@ -102,4 +112,10 @@ npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
 
+### Run `eventexamplesapp` Application:
+From the `Week 5/eventexamplesapp` folder:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) (or the port specified in terminal) to view the application in the browser.
 
