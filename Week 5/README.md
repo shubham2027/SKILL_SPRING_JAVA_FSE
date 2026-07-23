@@ -135,6 +135,12 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
   3. `should display cohort code in h3` (find and assert content inside `h3`).
   4. `should always render same html` (simple snapshot test).
 
+### 19. Git Client App (`myfirstreact` - Axios Fetch & Mock Testing)
+- Configured Axios to perform asynchronous HTTP requests in [myfirstreact](myfirstreact).
+- Created class [GitClient.js](myfirstreact/src/GitClient.js) containing a static method `getRepositories(username)` utilizing Axios to fetch data from `https://api.github.com/users/${username}/repos`.
+- Updated [App.js](myfirstreact/src/App.js) to render only the repository names of user `techiesyed` using `useState` and `useEffect` hooks.
+- Created [GitClient.test.js](myfirstreact/src/GitClient.test.js) implementing a unit test suite to mock Axios and verify that `GitClient.getRepositories("techiesyed")` retrieves the correct mocked repository data without making actual network requests.
+
 ---
 
 ## Main Entry Points
@@ -150,6 +156,7 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
 - The `ticketraisingapp` exercise renders the `<ComplaintRegister />` class component inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/ticketraisingapp/src/App.jsx).
 - The `mailregisterapp` exercise renders the `<Register />` component inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/mailregisterapp/src/App.jsx).
 - The `fetchuserapp` exercise renders the `<Getuser />` component inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/fetchuserapp/src/App.jsx).
+- The `myfirstreact` exercise renders the `<App />` component showcasing GitClient repository fetching.
 
 ## How to Run
 
