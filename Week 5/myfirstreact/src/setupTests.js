@@ -1,5 +1,15 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+const { TextEncoder, TextDecoder } = require('util');
+const { ReadableStream } = require('stream/web');
+const { MessageChannel, MessagePort } = require('worker_threads');
+
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
+global.ReadableStream = ReadableStream;
+global.MessageChannel = MessageChannel;
+global.MessagePort = MessagePort;
+
+require('@testing-library/jest-dom');
+const { configure } = require('enzyme');
+const Adapter = require('@cfaester/enzyme-adapter-react-18').default;
+
+configure({ adapter: new Adapter() });

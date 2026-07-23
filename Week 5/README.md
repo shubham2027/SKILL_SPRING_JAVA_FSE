@@ -107,6 +107,34 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
   - Implements form submit prevention and alert generating logic via `handleSubmit`.
   - Generates a random Transaction ID (`NumberHolder`) on loading and displays a clean popup on submission.
 
+### 16. Mail Register App (`mailregisterapp` - Form Handling & Validations)
+- Created a separate React project [mailregisterapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/mailregisterapp).
+- Component: [register.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/mailregisterapp/src/register.js)
+- Features:
+  - Form accepting Name, Email, and Password.
+  - State changes managed via custom `onChange` handlers (eventhandle).
+  - Triggers alerts on submission (`onSubmit` event):
+    1. Name must be at least 5 characters long: `"Full Name must be 5 characters long!"`.
+    2. Email must contain `@` and `.`: `"Email is not valid!"`.
+    3. Password must be at least 8 characters long: `"Password must be 8 characters long!"`.
+
+### 17. Fetch User App (`fetchuserapp` - Lifecycle Hook & Fetch API)
+- Created a separate React project [fetchuserapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/fetchuserapp).
+- Component: [Getuser.js](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/fetchuserapp/src/Getuser.js)
+- Features:
+  - Implemented class-based component using `componentDidMount()` to asynchronously fetch user data from `https://api.randomuser.me/`.
+  - Displays fetched user details (title, firstname, lastname) and user profile picture.
+
+### 18. Unit Testing with Jest & Enzyme (`myfirstreact`)
+- Implemented unit testing for the `CohortDetails` component using Jest and Enzyme inside the [myfirstreact](myfirstreact) project.
+- Configured Enzyme adapter for React 18 in [setupTests.js](myfirstreact/src/setupTests.js).
+- Created mock dataset in [CohortData.js](myfirstreact/src/components/CohortData.js).
+- Implemented 4 unit tests in [CohortDetails.test.js](myfirstreact/src/components/CohortDetails.test.js):
+  1. `should create the component` (isolation rendering using `shallow`).
+  2. `should initialize the props` (mount and check props structure).
+  3. `should display cohort code in h3` (find and assert content inside `h3`).
+  4. `should always render same html` (simple snapshot test).
+
 ---
 
 ## Main Entry Points
@@ -120,6 +148,8 @@ All Week 5 React exercises are implemented within the [myfirstreact](myfirstreac
 - The `bloggerapp` exercise renders the components dynamically inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/bloggerapp/src/App.jsx).
 - The `employeemanagementapp` exercise sets up the `<ThemeContext.Provider />` and renders the list in [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/employeemanagementapp/src/App.jsx).
 - The `ticketraisingapp` exercise renders the `<ComplaintRegister />` class component inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/ticketraisingapp/src/App.jsx).
+- The `mailregisterapp` exercise renders the `<Register />` component inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/mailregisterapp/src/App.jsx).
+- The `fetchuserapp` exercise renders the `<Getuser />` component inside [App.jsx](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%205/fetchuserapp/src/App.jsx).
 
 ## How to Run
 
@@ -185,3 +215,23 @@ From the `Week 5/ticketraisingapp` folder:
 npm run dev
 ```
 Open [http://localhost:5173](http://localhost:5173) (or the port specified in terminal) to view the application in the browser.
+
+### Run `mailregisterapp` Application:
+From the `Week 5/mailregisterapp` folder:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) (or the port specified in terminal) to view the application in the browser.
+
+### Run `fetchuserapp` Application:
+From the `Week 5/fetchuserapp` folder:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) (or the port specified in terminal) to view the application in the browser.
+
+### Run tests in `myfirstreact`:
+From the `Week 5/myfirstreact` folder:
+```bash
+npm test
+```
