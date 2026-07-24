@@ -54,3 +54,12 @@ A series of React.js frontend exercises ranging from single-page components to m
 
 ---
 
+### [Week 6 Git](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%206%20Git): Version Control with Git
+Hands-on exercises detailing fundamental and advanced Git commands, workflows, and conflict resolution.
+- **[Hands-on Lab 1: Git Basics](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%206%20Git/git-1-handson.md)**: User configuration, local repository initialization, staging, committing, and connecting to GitHub.
+- **[Hands-on Lab 2: .gitignore Rules](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%206%20Git/git-2-handson.md)**: Ignoring log files and build folders, and managing already tracked files.
+- **[Hands-on Lab 3: Branching & Merging](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%206%20Git/git-3-handson.md)**: Isolating feature changes on branches, fast-forward merges, deleting branches, and graph-based logs.
+- **[Hands-on Lab 4: Merge Conflicts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%206%20Git/git-4-handson.md)**: Simulating divergent commits, analyzing conflict markers, manual resolution, and cleaning up.
+- **[Hands-on Lab 5: Synchronization](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%206%20Git/git-5-handson.md)**: Reviewing repository clean states, verbose remote options, and sync workflows using pull and push.
+
+---
