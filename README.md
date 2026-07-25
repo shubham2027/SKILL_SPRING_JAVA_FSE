@@ -63,3 +63,18 @@ Hands-on exercises detailing fundamental and advanced Git commands, workflows, a
 - **[Hands-on Lab 5: Synchronization](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%206%20Git/git-5-handson.md)**: Reviewing repository clean states, verbose remote options, and sync workflows using pull and push.
 
 ---
+
+### [Week 7](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207): DevOps, Docker, Cloud & GenAI Fundamentals
+Focused on modern software engineering practices, containerization, cloud models, CI/CD, and Generative AI basics.
+- **[Week 7 Overview & Topics](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/README.md)**: Conceptual topics on DevOps culture, Docker containers, Cloud platforms, Kubernetes, and GenAI.
+
+---
+
+## Author
+
+**SHUBHAM KUMAR SINGH**
+- **Email:** [skshubhamskkr@gmail.com](mailto:skshubhamskkr@gmail.com)
+- **GitHub:** [shubham2027](https://github.com/shubham2027)
+- **Education:** B.Tech Computer Science and Engineering
+- **University:** Lovely Professional University
+
