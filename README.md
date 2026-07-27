@@ -64,9 +64,10 @@ Hands-on exercises detailing fundamental and advanced Git commands, workflows, a
 
 ---
 
-### [Week 7](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207): DevOps, Docker, Cloud & GenAI Fundamentals
-Focused on modern software engineering practices, containerization, cloud models, CI/CD, and Generative AI basics.
-- **[Week 7 Overview & Topics](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/README.md)**: Conceptual topics on DevOps culture, Docker containers, Cloud platforms, Kubernetes, and GenAI.
+### [Week 7](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207): Advanced Frontend Development with Angular
+Focused on building dynamic single-page applications (SPAs) with Angular, including reactive forms, client-side routing, protected views, and global state management.
+- **[Week 7 README / Guide](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/README.md)**: Main documentation detailing the project architecture, features, and run instructions.
+- **[angularapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp)**: A complete Angular SPA featuring NgRx state management (store, actions, reducers, effects), protected routes with guards, dynamic reactive forms, interceptors, and custom pipes/directives.
 
 ---
 

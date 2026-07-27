@@ -1,0 +1,12 @@
+<div class="profile-container">
+  <h2>Student Profile</h2>
+  
+  <h3>Enrolled Courses</h3>
+  <ul class="enrolled-list">
+    @for (course of enrolledCourses; track course.id) {
+      <li>{{ course.name }} ({{ course.code }}) - {{ course.credits }} Credits</li>
+    } @empty {
+      <li>You are not enrolled in any courses yet.</li>
+    }
+  </ul>
+</div>

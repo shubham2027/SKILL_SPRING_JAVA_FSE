@@ -1,0 +1,73 @@
+<div class="form-container">
+  <h2>Reactive Enrollment Form</h2>
+
+  <form [formGroup]="enrollForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="studentName">Name:</label>
+      <input type="text" id="studentName" formControlName="studentName">
+      @if (enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.errors?.['required']) {
+        <span class="error-msg">Name is required</span>
+      }
+      @if (enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.errors?.['minlength']) {
+        <span class="error-msg">Name must be at least 3 characters</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="studentEmail">Email:</label>
+      <input type="email" id="studentEmail" formControlName="studentEmail">
+      @if (enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['required']) {
+        <span class="error-msg">Email is required</span>
+      }
+      @if (enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['email']) {
+        <span class="error-msg">Invalid email</span>
+      }
+      @if (enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['emailTaken']) {
+        <span class="error-msg">Email taken</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="courseId">Course ID:</label>
+      <input type="text" id="courseId" formControlName="courseId">
+      @if (enrollForm.get('courseId')?.touched && enrollForm.get('courseId')?.errors?.['required']) {
+        <span class="error-msg">Course ID is required</span>
+      }
+      @if (enrollForm.get('courseId')?.errors?.['noCourseCode']) {
+        <span class="error-msg">Course code starting with XX is not allowed.</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="preferredSemester">Preferred Semester:</label>
+      <select id="preferredSemester" formControlName="preferredSemester">
+        <option value="Odd">Odd</option>
+        <option value="Even">Even</option>
+      </select>
+    </div>
+
+    <div class="form-group checkbox-group">
+      <label>
+        <input type="checkbox" formControlName="agreeToTerms">
+        I agree to the terms
+      </label>
+    </div>
+
+    <div formArrayName="additionalCourses" class="additional-courses">
+      <h3>Additional Courses</h3>
+      @for (ctrl of additionalCourses.controls; track $index) {
+        <div class="form-group">
+          <input [formControlName]="$index" placeholder="Additional Course ID">
+          <button type="button" (click)="removeCourse($index)">Remove</button>
+        </div>
+      }
+      <button type="button" (click)="addCourse()">Add Another Course</button>
+    </div>
+
+    <!-- 
+      enrollForm.value excludes disabled controls.
+      enrollForm.getRawValue() includes all controls, even disabled ones.
+    -->
+    <button type="submit" [disabled]="enrollForm.invalid">Submit</button>
+  </form>
+</div>

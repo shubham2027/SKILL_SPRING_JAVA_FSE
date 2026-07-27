@@ -1,0 +1,8 @@
+<div class="notification-container">
+  <button (click)="notificationService.send('Test Notification')">Send Notification</button>
+  <ul>
+    @for (notif of notificationService.getNotifications(); track $index) {
+      <li>{{ notif }}</li>
+    }
+  </ul>
+</div>

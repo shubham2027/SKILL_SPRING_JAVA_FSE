@@ -1,0 +1,27 @@
+<div class="course-list-container">
+  <h2>Available Courses</h2>
+  
+  @if (error$ | async; as errorMessage) {
+    <p class="error-msg">{{ errorMessage }}</p>
+  }
+
+  @if (isLoading$ | async) {
+    <p>Loading courses...</p>
+  } @else if (!(error$ | async)) {
+    <div class="courses-grid">
+      @for (course of (courses$ | async); track course.id) {
+        <app-course-card 
+          [course]="course" 
+          (click)="goToCourse(course.id)"
+          (enrollRequested)="onEnroll($event)">
+        </app-course-card>
+      } @empty {
+        <p>No courses available right now.</p>
+      }
+    </div>
+  }
+
+  @if (selectedCourseId) {
+    <p class="selected-message">Selected course ID: {{ selectedCourseId }}</p>
+  }
+</div>

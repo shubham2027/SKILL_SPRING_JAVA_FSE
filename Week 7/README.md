@@ -1,363 +1,164 @@
-# Week 7 – DevOps, Docker, Cloud & GenAI Fundamentals
+# Week 7 – Angular Student Course Portal
 
-## Overview
-
-Week 7 focuses on modern software engineering practices used in enterprise application development. The topics introduce DevOps culture, containerization with Docker, cloud computing concepts, and the fundamentals of Generative AI. These technologies are widely used for building, deploying, scaling, and maintaining modern cloud-native applications.
+This directory contains a complete Angular Single Page Application (SPA) showcasing modern enterprise frontend development practices, client-side routing, protected views, reactive forms, global state management, and HTTP interceptors.
 
 ---
 
 # Folder Structure
 
 ```
-Week-7-DevOps-Cloud-GenAI
-│
-└── README.md
+Week 7
+├── README.md
+└── angularapp
+    ├── db.json
+    ├── package.json
+    ├── tsconfig.json
+    └── src
+        ├── main.ts
+        ├── index.html
+        ├── styles.css
+        └── app
+            ├── app.ts
+            ├── app.html
+            ├── app.css
+            ├── app.config.ts
+            ├── app.routes.ts
+            ├── components
+            │   ├── course-card
+            │   ├── course-summary-widget
+            │   ├── header
+            │   └── notification
+            ├── directives
+            │   └── highlight.ts
+            ├── guards
+            │   ├── auth-guard.ts
+            │   └── unsaved-changes-guard.ts
+            ├── interceptors
+            │   ├── auth-interceptor.ts
+            │   ├── error-handler-interceptor.ts
+            │   └── loading-interceptor.ts
+            ├── models
+            │   └── course.model.ts
+            ├── pages
+            │   ├── course-detail
+            │   ├── course-list
+            │   ├── courses-layout
+            │   ├── enrollment-form
+            │   ├── home
+            │   ├── not-found
+            │   ├── reactive-enrollment-form
+            │   └── student-profile
+            ├── pipes
+            │   └── credit-label-pipe.ts
+            ├── services
+            │   ├── course.ts
+            │   ├── enrollment.ts
+            │   ├── loading.ts
+            │   └── notification.ts
+            └── store
+                ├── course.actions.ts
+                ├── course.effects.ts
+                ├── course.reducer.ts
+                └── course.selectors.ts
 ```
 
 ---
 
-# Topics Covered
+# Hands-on Project: Angular Student Course Portal
 
-## 1. DevOps Fundamentals
+The directory [angularapp](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp) contains a complete Angular SPA (Single Page Application) that demonstrates modern enterprise frontend development practices with state management, routing guards, and validation.
 
-### What is DevOps?
+### Key Capabilities & Architectural Features:
 
-DevOps is a software development methodology that combines **Development (Dev)** and **Operations (Ops)** to improve collaboration, automate workflows, and deliver software faster and more reliably.
+#### 1. State Management (NgRx)
+Uses **NgRx Store** and **NgRx Effects** to manage course state globally, isolating components from direct API requests and facilitating a unidirectional data flow.
+- [course.actions.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/store/course.actions.ts): Action triggers for loading courses, success, and failure.
+- [course.reducer.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/store/course.reducer.ts): Pure function state transitions for handling course data, load indicators, and error tracking.
+- [course.effects.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/store/course.effects.ts): Handles side-effects to load courses asynchronously from the `CourseService` backend.
+- [course.selectors.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/store/course.selectors.ts): Memoized selectors to retrieve specific slices of state (`courses`, `loading`, `error`).
 
-### DevOps Lifecycle
+#### 2. Advanced Client-side Routing & Protected Views
+Implemented in [app.routes.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/app.routes.ts) featuring:
+- **Child Routes & Layouts**: Nesting [CourseList](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/pages/course-list/course-list.ts) and [CourseDetail](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/pages/course-detail/course-detail.ts) under `CoursesLayout`.
+- **Lazy Loading**: Dynamically loads components (e.g. `EnrollmentForm`, `ReactiveEnrollmentForm`) to optimize initial bundle sizes.
+- **Route Guards**: 
+  - [authGuard](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/guards/auth-guard.ts): Restricts access to `/profile` and `/enroll` pages unless logged in.
+  - [unsavedChangesGuard](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/guards/unsaved-changes-guard.ts): Prevents accidental navigation away from the reactive enrollment form if it has unsaved changes.
 
-- Plan
-- Develop
-- Build
-- Test
-- Release
-- Deploy
-- Operate
-- Monitor
+#### 3. Enterprise Forms & Validation
+- **Template-driven Forms**: [enrollment-form.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/pages/enrollment-form/enrollment-form.ts) for straightforward data capture.
+- **Reactive Forms & Form Arrays**: [reactive-enrollment-form.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/pages/reactive-enrollment-form/reactive-enrollment-form.ts) provides robust control, implementing dynamic fields via `FormArray` for adding/removing multiple courses, along with:
+  - *Synchronous Custom Validator*: `noCourseCode` (rejects course IDs starting with 'XX').
+  - *Asynchronous Custom Validator*: `simulateEmailCheck` (simulates checking if an email is already taken using a deferred Promise).
 
-### Benefits of DevOps
+#### 4. Custom Directives, Pipes & Components
+- **Reusable Card**: [course-card.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/components/course-card/course-card.ts) displays course information using `@Input()` and `@Output()` decorators, hook checks (`ngOnChanges`), and local enrollment toggling.
+- **Directives**: [highlight.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/directives/highlight.ts) applying styles dynamically to DOM elements.
+- **Pipes**: [credit-label-pipe.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/pipes/credit-label-pipe.ts) formats course credits into user-friendly labels.
 
-- Faster software delivery
-- Continuous Integration (CI)
-- Continuous Deployment (CD)
-- Better collaboration
-- Automated testing
-- Improved software quality
-- Faster issue resolution
-
-### Common DevOps Tools
-
-- Git
-- GitHub
-- Jenkins
-- Maven
-- Docker
-- Kubernetes
-- Ansible
-- Terraform
-- Prometheus
-- Grafana
+#### 5. HTTP Interceptors & Services
+Interceptors defined globally in the application context:
+- [auth-interceptor.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/interceptors/auth-interceptor.ts): Inject authentication tokens.
+- [loading-interceptor.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/interceptors/loading-interceptor.ts): Communicates with [loading.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/services/loading.ts) service to monitor API call durations.
+- [error-handler-interceptor.ts](file:///d:/CODES/SKILL%20SPRING%20JAVA%20FSE/Week%207/angularapp/src/app/interceptors/error-handler-interceptor.ts): Handles API exceptions centrally.
 
 ---
 
-# 2. Docker Fundamentals
+# How to Run the Angular Application
 
-### What is Docker?
+To get the application up and running locally, follow these steps:
 
-Docker is an open-source containerization platform that packages an application together with its dependencies into lightweight, portable containers.
+### 1. Prerequisites
+- Ensure you have **Node.js** (v18 or higher recommended) and **npm** installed.
+- Ensure the Angular CLI is installed (`npm install -g @angular/cli`).
 
-### Docker Components
-
-- Docker Engine
-- Docker Client
-- Docker Daemon
-- Docker Image
-- Docker Container
-- Docker Registry
-- Docker Hub
-
-### Docker Workflow
-
-Source Code
-
-↓
-
-Dockerfile
-
-↓
-
-Docker Image
-
-↓
-
-Docker Container
-
-↓
-
-Deployment
-
-### Advantages of Docker
-
-- Platform independent
-- Lightweight
-- Faster deployment
-- Easy scaling
-- Consistent environments
-- Better resource utilization
-
-### Common Docker Commands
-
+### 2. Setup Dependencies
+Navigate to the `angularapp` directory and install the necessary npm dependencies:
 ```bash
-docker --version
-docker pull
-docker build
-docker images
-docker run
-docker ps
-docker stop
-docker rm
-docker rmi
+cd "Week 7/angularapp"
+npm install
 ```
 
----
-
-# 3. Cloud Computing Fundamentals
-
-### What is Cloud Computing?
-
-Cloud Computing is the delivery of computing services over the internet including:
-
-- Servers
-- Storage
-- Databases
-- Networking
-- Software
-- Analytics
-- Artificial Intelligence
-
-### Cloud Service Models
-
-### IaaS
-
-Infrastructure as a Service
-
-Examples:
-
-- AWS EC2
-- Azure Virtual Machines
-
-### PaaS
-
-Platform as a Service
-
-Examples:
-
-- Google App Engine
-- Azure App Service
-
-### SaaS
-
-Software as a Service
-
-Examples:
-
-- Gmail
-- Microsoft 365
-- Salesforce
-
-### Cloud Deployment Models
-
-- Public Cloud
-- Private Cloud
-- Hybrid Cloud
-- Multi Cloud
-
-### Major Cloud Providers
-
-- Amazon Web Services (AWS)
-- Microsoft Azure
-- Google Cloud Platform (GCP)
-- Oracle Cloud Infrastructure (OCI)
-
-### Benefits
-
-- Scalability
-- High Availability
-- Cost Efficiency
-- Global Access
-- Disaster Recovery
-- Security
-
----
-
-# 4. CI/CD Overview
-
-### Continuous Integration (CI)
-
-Automatically builds and tests code whenever changes are committed.
-
-### Continuous Deployment (CD)
-
-Automatically deploys successfully tested applications to production or staging environments.
-
-### Benefits
-
-- Faster releases
-- Reduced bugs
-- Automated testing
-- Better software quality
-
----
-
-# 5. Containerization vs Virtualization
-
-## Virtual Machines
-
-- Includes full Operating System
-- Higher resource usage
-- Slower startup
-
-## Containers
-
-- Share host Operating System
-- Lightweight
-- Faster startup
-- Easy deployment
-
----
-
-# 6. Introduction to Kubernetes
-
-Kubernetes is a container orchestration platform used to deploy, manage, and scale Docker containers.
-
-### Core Components
-
-- Pod
-- Node
-- Cluster
-- Deployment
-- Service
-- ReplicaSet
-
-### Benefits
-
-- Auto Scaling
-- Load Balancing
-- Self Healing
-- Rolling Updates
-
----
-
-# 7. Generative AI Fundamentals
-
-### What is Generative AI?
-
-Generative AI refers to Artificial Intelligence systems capable of generating new content such as:
-
-- Text
-- Images
-- Audio
-- Video
-- Code
-
-### Popular Models
-
-- GPT
-- Gemini
-- Claude
-- Llama
-
-### Applications
-
-- Code Generation
-- Chatbots
-- Documentation
-- Image Generation
-- Software Testing
-- Data Analysis
-- Content Creation
-
-### Advantages
-
-- Increased Productivity
-- Automation
-- Faster Development
-- Improved Customer Support
-
-### Challenges
-
-- Hallucinations
-- Data Privacy
-- Bias
-- Security Risks
-- Ethical Concerns
-
----
-
-# 8. DevOps + Cloud + GenAI Integration
-
-Modern software development combines:
-
-Git
-
-↓
-
-CI/CD Pipeline
-
-↓
-
-Docker
-
-↓
-
-Cloud Deployment
-
-↓
-
-Monitoring
-
-↓
-
-Generative AI Assisted Development
-
-This integrated workflow enables faster software delivery, better collaboration, automated deployments, and AI-assisted engineering.
+### 3. Run Mock Backend Service
+The application relies on a mock REST API. Start the JSON Server to watch `db.json` on port 3000:
+```bash
+npm run server
+```
+This serves the mock courses database at `http://localhost:3000/courses`.
+
+### 4. Run Angular Development Server
+In a separate terminal, start the Angular development server:
+```bash
+npm start
+```
+By default, the application will boot up and be accessible at `http://localhost:4200/`.
 
 ---
 
 # Key Learning Outcomes
 
-After completing Week 7, I understood:
+After completing the exercises in this module, I understood:
 
-- DevOps principles and lifecycle.
-- Docker architecture and containerization.
-- Cloud computing models and deployment types.
-- CI/CD concepts.
-- Differences between Virtual Machines and Containers.
-- Kubernetes basics.
-- Fundamentals of Generative AI.
-- Integration of DevOps, Cloud, Docker, and AI in modern software development.
+- **Enterprise Angular Development (SPAs, lazy loading, sub-routing, route protection).**
+- **State Management with NgRx Store & Effects.**
+- **Reactive Forms (FormArrays, Custom Sync and Async Validators).**
+- **Angular Services, HTTP Client, Interceptors, Pipes, and Directives.**
 
 ---
 
 # Technologies Studied
 
-- Git
-- GitHub
-- DevOps
-- Docker
-- Kubernetes (Basics)
-- Cloud Computing
-- AWS
-- Azure
-- Google Cloud
-- CI/CD
-- Generative AI
+- **Angular (v21)**
+- **NgRx (Store, Effects)**
+- **RxJS**
+- **TypeScript**
+- **JSON Server (Mock Backend)**
 
 ---
 
 # Conclusion
 
-Week 7 provides the theoretical foundation for modern software engineering practices. Understanding DevOps, Docker, Cloud Computing, and Generative AI prepares developers for building scalable, cloud-native, AI-enabled applications using industry-standard tools and workflows.
+This hands-on application provides a deep dive into advanced frontend practices with Angular, focusing on real-world capabilities like routing protection, robust state management with NgRx, and form-handling validation patterns.
 
 ---
 
@@ -368,5 +169,3 @@ Week 7 provides the theoretical foundation for modern software engineering pract
 - **GitHub:** [shubham2027](https://github.com/shubham2027)
 - **Education:** B.Tech Computer Science and Engineering
 - **University:** Lovely Professional University
-
-
